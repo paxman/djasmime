@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>paxman</groupId>
+  <artifactId>djasmime</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>djasmime</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <description>POC Chrome/Opera Native Messaging browser email SMIME signing extension.</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.bouncycastle</groupId>
+  		<artifactId>bcpkix-jdk15on</artifactId>
+  		<version>1.57</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.bouncycastle</groupId>
+  		<artifactId>bcprov-jdk15on</artifactId>
+  		<version>1.57</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.bouncycastle</groupId>
+  		<artifactId>bcmail-jdk15on</artifactId>
+  		<version>1.57</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>javax.mail</groupId>
+  		<artifactId>mail</artifactId>
+  		<version>1.5.0-b01</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.glassfish</groupId>
+  		<artifactId>javax.json</artifactId>
+  		<version>1.1.0-M2</version>
+  	</dependency>
+  </dependencies>
+  
+  
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+		        <artifactId>maven-assembly-plugin</artifactId>
+		        <executions>
+		          <execution>
+		            <phase>package</phase>
+		            <goals>
+		              <goal>single</goal>
+		            </goals>
+		          </execution>
+		        </executions>
+		        <configuration>
+		        <archive>
+			          <manifest>
+			            <mainClass>paxman.djasmime.Djasmime</mainClass>
+			          </manifest>
+			        </archive>
+		          <descriptorRefs>
+		            <descriptorRef>jar-with-dependencies</descriptorRef>
+		          </descriptorRefs>
+		          
+		        </configuration>
+	      </plugin>
+		
+		</plugins>
+ </build>
+
+
+
+</project>

@@ -1,0 +1,17 @@
+{
+  "name": "djasmime",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "POC Chrome/Opera Native Messaging browser email SMIME signing extension.",
+  "background": {
+      "scripts": ["main.js"]
+  },
+  "icons": {
+  },
+  "externally_connectable": {
+  	"matches":["http://127.0.0.1:8000/*"]
+  },
+  "permissions": [
+    "nativeMessaging"
+  ]
+}

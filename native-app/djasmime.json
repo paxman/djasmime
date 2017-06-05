@@ -1,0 +1,9 @@
+{
+  "name": "djasmime",
+  "description": "POC Chrome/Opera Native Messaging browser email SMIME signing extension.",
+  "path": "djasmime.bat",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://ldbpeldocafmlnjhcdlcdemlplgnnlpd/"
+  ]
+}

@@ -1,0 +1,30 @@
+{% load static %}
+<script src="{% static "js/script.js" %}"></script>
+<style>
+
+html, address,
+blockquote,
+body, dd, div,
+dl, dt, fieldset, form,
+frame, frameset,
+h1, h2, h3, h4,
+h5, h6, noframes,
+ol, p, ul, center,
+dir, hr, menu, pre   { display: block; unicode-bidi: embed }
+
+button, textarea,
+input, select   { display: block }
+
+}
+</style>
+
+{% if sent %}
+    <h1>Message sent succesfully!</h1>
+{% endif %}
+
+<form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input id="sign_button" type="button" value="Sign" />
+    <input id="submit_button" type="submit" value="Submit" disabled/>
+</form>
